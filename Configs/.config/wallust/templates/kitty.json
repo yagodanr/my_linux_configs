@@ -1,0 +1,4 @@
+{
+  "template": "~/.config/wallust/templates/kitty.j2",
+  "target": "~/.config/kitty/colors2.conf"
+}
