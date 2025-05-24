@@ -17,7 +17,7 @@ fi
 #// rofi action
 
 case "${1}" in
-    d|--drun) r_mode="drun" ;; 
+    d|--drun) r_mode="drun" ;;
     w|--window) r_mode="window" ;;
     f|--filebrowser) r_mode="filebrowser" ;;
     h|--help) echo -e "$(basename "${0}") [action]"
@@ -42,4 +42,3 @@ i_override="configuration {icon-theme: \"${i_override}\";}"
 #// launch rofi
 
 rofi -show "${r_mode}" -theme-str "${r_scale}" -theme-str "${r_override}" -theme-str "${i_override}" -config "${roconf}"
-

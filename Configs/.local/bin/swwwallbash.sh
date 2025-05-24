@@ -7,8 +7,8 @@ source "${scrDir}/globalcontrol.sh"
 # Wallust
 # Templates for apps defined in ~/.config/wallust/config.toml
 if [[ "$1" =~ .(jpg|jpeg|png|gif)$ ]]; then
-    wallust run "$1" -s
-    source "$HOME/.cache/wallust/generate/colors.sh"
+    wallust run "$1" -s --backend wal
+    source "$HOME/.cache/wallust/generated/colors.sh"
     # kitty @ set-colors ~/.config/kitty/wallust_colors.conf
     kitten themes --reload-in=all wallust
 else
@@ -85,4 +85,4 @@ fi
 
 # Reload applications to apply new colors
 hyprctl reload
-restart -USR2 waybar
+restart waybar
