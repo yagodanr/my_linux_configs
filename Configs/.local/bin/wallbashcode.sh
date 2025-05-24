@@ -39,3 +39,5 @@
 #         jq '.["workbench.colorTheme"] = "wallbash"' "${codeConf[i]}/User/settings.json" > "${tmpFile}" && mv "${tmpFile}" "${codeConf[i]}/User/settings.json"
 #     fi
 # done
+
+exit 0

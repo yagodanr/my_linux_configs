@@ -9,7 +9,6 @@ export cacheDir="$HOME/.cache/hyde"
 export thmbDir="${cacheDir}/thumbs"
 export dcolDir="${cacheDir}/dcols"
 export hashMech="sha1sum"
-export wallAddCustomPath=("/windows/E/wallpapers")
 
 get_hashmap()
 {

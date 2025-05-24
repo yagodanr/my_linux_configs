@@ -44,7 +44,7 @@ step=${BRIGHTNESS_STEPS:-5}
 step="${2:-$step}"
 
 case $1 in
-i | -i) # increase the backlight2
+i | -i) # increase the backlight
     if [[ $(get_brightness) -lt 10 ]]; then
         # increase the backlight by 1% if less than 10%
         step=1
@@ -61,8 +61,13 @@ d | -d) # decrease the backlight
         step=1
     fi
 
-    $use_swayosd && swayosd-client --brightness lower "$step" && exit 0
-    brightnessctl set "${step}"%-\
+    if [[ $(get_brightness) -le 1 ]]; then
+        brightnessctl set "${step}"%
+        $use_swayosd && exit 0
+    else
+        $use_swayosd && swayosd-client --brightness lower "$step" && exit 0
+        brightnessctl set "${step}"%-
+    fi
 
     send_notification
     ;;
