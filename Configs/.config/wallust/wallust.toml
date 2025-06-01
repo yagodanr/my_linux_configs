@@ -50,3 +50,4 @@ kitty = { template = 'kitty.j2', target = '~/.config/kitty/themes/wallust.conf' 
 colors = { template = 'colors.j2', target = '~/.cache/wallust/generated/colors.sh' }
 hyprland = { template = 'hyprland.j2', target = '~/.config/hypr/themes/colors.conf' }
 waybar = { template = 'waybar.j2', target = '~/.config/waybar/theme.css' }
+cava = { template = 'cava.j2', target = '~/.config/cava/config' }

@@ -86,3 +86,5 @@ fi
 # Reload applications to apply new colors
 hyprctl reload
 restart waybar
+pkill -USR2 cava
+# restart cava

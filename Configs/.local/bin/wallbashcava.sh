@@ -22,43 +22,43 @@
 # fi
 #!/usr/bin/env bash
 
-scrDir="$(dirname "$(realpath "$0")")"
-source "${scrDir}/globalcontrol.sh"
-source "$HOME/.cache/wal/colors.sh"
+# scrDir="$(dirname "$(realpath "$0")")"
+# source "${scrDir}/globalcontrol.sh"
+# source "$HOME/.cache/wallust/generated/colors.sh"
 
-# Create cava config from pywal colors
-# Ensure cava config directory exists
-mkdir -p "$confDir/cava"
+# # Create cava config from pywal colors
+# # Ensure cava config directory exists
+# mkdir -p "$confDir/cava"
 
-# Create or update cava config
-cat > "$confDir/cava/config" << EOF
-[general]
-framerate = 60
-autosens = 1
-bars = 15
-bar_width = 4
-bar_spacing = 1
+# # Create or update cava config
+# cat > "$confDir/cava/config" << EOF
+# [general]
+# framerate = 60
+# autosens = 1
+# bars = 15
+# bar_width = 4
+# bar_spacing = 1
 
-[input]
-method = pulse
-source = auto
+# [input]
+# method = pulse
+# source = auto
 
-[output]
-method = ncurses
+# [output]
+# method = ncurses
 
-[color]
-gradient = 1
-gradient_count = 6
-gradient_color_1 = '${color1}'
-gradient_color_2 = '${color2}'
-gradient_color_3 = '${color3}'
-gradient_color_4 = '${color4}'
-gradient_color_5 = '${color5}'
-gradient_color_6 = '${color6}'
+# [color]
+# gradient = 1
+# gradient_count = 6
+# gradient_color_1 = '${color1}'
+# gradient_color_2 = '${color2}'
+# gradient_color_3 = '${color3}'
+# gradient_color_4 = '${color4}'
+# gradient_color_5 = '${color5}'
+# gradient_color_6 = '${color6}'
 
-[smoothing]
-noise_reduction = 0.77
-EOF
+# [smoothing]
+# noise_reduction = 0.77
+# EOF
 
-# Reload cava
-pkill -USR2 cava
+# # Reload cava
+# pkill -USR2 cava
