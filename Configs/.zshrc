@@ -123,21 +123,21 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 eval "$(fzf --zsh)"
 
 # -- Use fd instead of fzf --
-export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git --exclude venv"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git --exclude venv"
 
 
 # Use fd (https://github.com/sharkdp/fd) for listing path candidates.
 # - The first argument to the function ($1) is the base path to start traversal
 # - See the source code (completion.{bash,zsh}) for the details.
 _fzf_compgen_path() {
-  fd --hidden --exclude .git . "$1"
+  fd --hidden --exclude .git --exclude venv . "$1"
 }
 
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
-  fd --type=d --hidden --exclude .git . "$1"
+  fd --type=d --hidden --exclude .git --exclude venv . "$1"
 }
 
 source ~/MyConfigs/fzf-git.sh/fzf-git.sh
@@ -178,6 +178,14 @@ eval $(thefuck --alias)
 export DRUID_JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 
 
+# fix wrong path
+# unset XDG_CONFIG_HOME
+# export XDG_CONFIG_HOME=$HOME/.config
+
 # pywal for new terminals
 # (cat ~/.cache/wal/sequences &)
 # source ~/.cache/wal/colors-tty.sh
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
